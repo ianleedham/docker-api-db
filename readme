@@ -1,0 +1,5 @@
+ToDo:
+
+1. backup the db
+2. make migrations run automatically
+3. Be able to use EF with mariadb
