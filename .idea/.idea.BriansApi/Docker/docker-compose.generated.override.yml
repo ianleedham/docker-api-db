@@ -1,0 +1,21 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  backend:
+    build:
+      context: "/home/brian/Development/BriansApi"
+      dockerfile: "BriansApi/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/BriansApi.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "briansapi:dev"
+    ports: []
+    volumes:
+    - "/home/brian/.nuget/packages:/home/app/.nuget/packages"
+    - "/home/brian/Development/BriansApi/BriansApi:/app:rw"
+    - "/home/brian/Development/BriansApi:/src:rw"
+    working_dir: "/app"
