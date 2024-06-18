@@ -14,9 +14,12 @@
   db:
     container_name: sqlserver
     image: mcr.microsoft.com/mssql/server:2022-latest
+    user: root
     hostname: 'sqlserver'
     volumes:
-      - ./data/mssql:/var/opt/mssql3
+      - db-data:/var/opt/mssql/data
+#      - ./db/mssql/logs:/var/opt/mssql/logs
+#      - ./db/mssql/secrets:/var/opt/mssql/secrets
     ports:
       - 1433:1433
     expose:
