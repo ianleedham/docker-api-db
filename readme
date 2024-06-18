@@ -2,4 +2,15 @@ ToDo:
 
 1. backup the db
 2. make migrations run automatically
-3. Be able to use EF with mariadb
+3. setup logging
+4. Be able to use EF with mariadb
+
+Useful commands:
+ docker exec -it --privileged --user root sqlserver /bin/bash
+/opt/mssql-tools/bin/sqlcmd \
+   -S localhost -U SA -P 'Password_123' \
+   -Q "BACKUP DATABASE ProductsDb TO DISK = N'/var/opt/mssql/backup/ProductsDb.bak' WITH NOFORMAT, NOINIT, NAME = 'ProductsDb-full', SKIP, NOREWIND, NOUNLOAD, STATS = 10"
+   
+   
+   Links:
+   https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-docker-container-configure?view=sql-server-ver16&pivots=cs1-bash#persist
